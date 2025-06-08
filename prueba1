@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar-nft.min.js"></script>
+    <style>
+      body { margin: 0; overflow: hidden; }
+    </style>
+  </head>
+
+  <body>
+    <a-scene
+      vr-mode-ui="enabled: false"
+      embedded
+      arjs="sourceType: webcam; gpsMinAccuracy: 100; debugUIEnabled: false;"
+      renderer="logarithmicDepthBuffer: true;"
+    >
+      <!-- Cámara con GPS -->
+      <a-camera gps-camera rotation-reader></a-camera>
+
+      <!-- Círculo plano rojo en coordenadas dadas -->
+      <a-circle
+        position="0 0 0"
+        material="color: red; opacity: 0.8;"
+        radius="2"
+        rotation="-90 0 0"
+        gps-entity-place="latitude: -34.57680929715351; longitude: -58.454622637037126"
+      ></a-circle>
+    </a-scene>
+  </body>
+</html>
